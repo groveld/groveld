@@ -2,8 +2,8 @@ name: Daily Updates
 
 on:
   schedule:
-    # Once a day at 8 AM
-    - cron: '0 8 * * *'
+    # Once a day at 06:00 UTC
+    - cron: '0 6 * * *'
   push:
     branches:
       - main
