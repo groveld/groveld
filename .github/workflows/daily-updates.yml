@@ -13,10 +13,8 @@ jobs:
     name: Updates
     runs-on: ubuntu-latest
     steps:
-      - name: Update my status
-        uses: actions/github-script@v3
+      - uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GH_PAT}}
           script: |
             const query = `mutation changeUserStatus ($input: ChangeUserStatusInput!) {
               changeUserStatus (input: $input) {
