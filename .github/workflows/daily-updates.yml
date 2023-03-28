@@ -2,19 +2,19 @@ name: Daily Updates
 
 on:
   schedule:
-    # Once a day at 06:00 UTC
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * *' # Run daily at 06:00 UTC
   push:
     branches:
       - main
 
 jobs:
-  updates:
-    name: Updates
+  daily-updates:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const query = `mutation changeUserStatus ($input: ChangeUserStatusInput!) {
               changeUserStatus (input: $input) {
