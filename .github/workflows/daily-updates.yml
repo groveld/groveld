@@ -30,8 +30,8 @@ jobs:
             const dayIndex = (new Date()).getDay()
             github.graphql(query, {
               input: {
-                emoji: '👋'
-                message: `Hello, happy ${days[dayIndex]}!`
+                emoji: '👋',
+                message: `Hello, happy ${days[dayIndex]}!`,
                 expiresAt: DateTime.Today.AddDays(1).AddTicks(-1)
               }
             })
