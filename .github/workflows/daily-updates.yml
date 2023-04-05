@@ -3,7 +3,6 @@ name: Daily Updates
 
 on:
   workflow_dispatch:
-  push:
   schedule:
     - cron: '0 6 * * *' # Run daily at 06:00 UTC
 
@@ -16,7 +15,7 @@ jobs:
     steps:
       - uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_PAT }}
           script: |
             const query = `mutation changeUserStatus ($input: ChangeUserStatusInput!) {
               changeUserStatus (input: $input) {
