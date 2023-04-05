@@ -1,10 +1,14 @@
+---
 name: Daily Updates
 
 on:
-  push:
   workflow_dispatch:
+  push:
   schedule:
     - cron: '0 6 * * *' # Run daily at 06:00 UTC
+
+permissions:
+  contents: write
 
 jobs:
   daily-updates:
