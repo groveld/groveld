@@ -30,15 +30,10 @@ jobs:
             const now = new Date()
             const dayIndex = now.getDay()
             const dayEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).toISOString()
-
-            console.log('now:', now)
-            console.log('dayIndex:', dayIndex)
-            console.log('dayEnd:', dayEnd)
-
             github.graphql(query, {
               input: {
                 emoji: '👋',
-                message: `Hello, happy ${days[dayIndex]}! [${now}] [${dayIndex}] [${dayEnd}]`,
-                expiresAt: dayEnd
+                message: `Hello, happy ${days[dayIndex]}!`,
+                expiresAt: `${dayEnd}`
               }
             })
