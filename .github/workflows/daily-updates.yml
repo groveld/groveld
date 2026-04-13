@@ -9,6 +9,10 @@ on:
 jobs:
   daily_updates:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
     steps:
       - uses: actions/github-script@v9
         with:
