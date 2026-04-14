@@ -1,7 +1,4 @@
 ---
-# File: .github/workflows/stale.yml
-# Docs: https://github.com/probot/stale
-
 name: Close stale issues and PRs
 
 on:
