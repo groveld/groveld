@@ -2,17 +2,22 @@
 name: Lint code with Super-linter
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
+
+permissions:
+  contents: read
+  packages: read
+  statuses: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   linter:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
 
     steps:
       - name: Checkout code
