@@ -16,5 +16,3 @@ updates:
           - "*"
     cooldown:
       default-days: 7
-    assignees:
-      - groveld
